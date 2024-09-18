@@ -1,0 +1,21 @@
+# Ignorar archivos y carpetas generados por Visual Studio
+.vs/
+bin/
+obj/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignorar archivos de configuración personal
+*.suo
+*.user
+*.userprefs
+
+# Ignorar archivos de compilación
+*.builds
+*.pidb
+*.log
+
+# Ignorar paquetes
+packages/
