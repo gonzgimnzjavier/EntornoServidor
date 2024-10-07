@@ -1,0 +1,112 @@
+﻿@{
+	ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+	<h1 class="display-4">EJERCICIOS JAVIER GONZÁLEZ GIMÉNEZ</h1>
+</div>
+
+		<!--Ejercicio 1-->
+
+		<h2>Ejercicio 1</h2>
+
+		@{
+
+			Random rand = new Random();
+
+			int cantidadNotas = rand.Next(1, 11);
+
+			int[] almacenNotas = new int[cantidadNotas];
+
+			double maximaNota = 0;
+
+			double minimaNota = 0;
+
+			double media = 0;
+
+			<p>El alumno ha realizado: @cantidadNotas examenes</p>
+				<ul>
+					@for (int i = 0; i < almacenNotas.Length; i++)
+					{
+						almacenNotas[i] = rand.Next(0, 11);
+						<li>@(i + 1)ª calificacion: @almacenNotas[i]</li>
+						media += almacenNotas[i];
+					}
+				</ul>
+				maximaNota = almacenNotas.Max();
+				minimaNota = almacenNotas.Min();
+				media = media / almacenNotas.Length;
+				<p>La nota maxima del alumno es: @maximaNota</p>
+				<p>La nota minima del alumno es: @minimaNota</p>
+				<p>La nota media del alumno es: @Math.Round(media,2)</p>
+		}
+
+		<!--Ejercicio 2-->
+
+		<h2>Ejercicio 2</h2>
+
+		@{
+			String[] almacenadorCadenas = new String[5];
+			String[] almacenadorCadenasInverso = new String[5];
+
+
+			static String generadorCadenasAleatorias()
+			{
+				Random random = new Random();
+				String cadenaAleatoria = "";
+				int numeroCaracteres = random.Next(1, 21);
+				for (int i = 0; i < numeroCaracteres; i++)
+				{
+					cadenaAleatoria += (char)random.Next(97, 123);
+				}
+				return cadenaAleatoria;
+			}
+
+			<h3>Las 5 cadenas generadas son:</h3>
+			<ul>
+				@for (int i = 0; i < 5; i++)
+				{
+					almacenadorCadenas[i] = generadorCadenasAleatorias();
+					almacenadorCadenasInverso[i] = new String(almacenadorCadenas[i].Reverse().ToArray());
+					<li>@almacenadorCadenas[i]</li>
+				}
+			</ul>
+
+			<h3>Las 5 cadenas generadas de forma inversa son:</h3>
+			<ul>
+				@for (int i = 0; i < 5; i++)
+				{
+					<li>@almacenadorCadenasInverso[i]</li>
+				}
+			</ul>
+		}
+
+		<!--Ejercicio 3-->
+		<h2>Ejercicio 3</h2>
+		@{
+			Random random = new Random();
+
+			int numeroElementos = random.Next(2, 11);
+
+			int[] numeros = new int[numeroElementos];
+
+			<h3>Se han generado los siguientes numeros en una matriz de @numeros.Length posiciones:</h3>
+
+			<ul>
+				@for (int i = 0; i < numeros.Length; i++)
+				{
+					numeros[i] = random.Next(1, 1001);
+					<li>@numeros[i]</li>
+				}
+			</ul>
+
+			Array.Sort(numeros);
+			<h3>De la siguiente forma quedarian ordenados:</h3>
+			<ul>
+				@foreach (int i in numeros)
+				{
+					<li>@i</li>
+				}
+			</ul>
+
+		}
