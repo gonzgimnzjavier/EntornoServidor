@@ -110,3 +110,102 @@
 			</ul>
 
 		}
+
+		<!--Ejercicio 4-->
+		<h2>Ejercicio 4</h2>
+		@{
+			var cartas = new List<Carta>
+			{
+				new Carta("Oros", "As", "1Oro.jpg"),
+				new Carta("Oros", "2", "2Oro.jpg"),
+				new Carta("Oros", "3", "3Oro.jpg"),
+				new Carta("Oros", "4", "4Oro.jpg"),
+				new Carta("Oros", "5", "5Oro.jpg"),
+				new Carta("Oros", "6", "6Oro.jpg"),
+				new Carta("Oros", "7", "7Oro.jpg"),
+				new Carta("Oros", "Sota", "8Oro.jpg"),
+				new Carta("Oros", "Caballo", "9Oro.jpg"),
+				new Carta("Oros", "Rey", "10Oro.jpg"),
+
+				new Carta("Copas", "As", "1Copas.jpg"),
+				new Carta("Copas", "2", "2Copas.jpg"),
+				new Carta("Copas", "3", "3Copas.jpg"),
+				new Carta("Copas", "4", "4Copas.jpg"),
+				new Carta("Copas", "5", "5Copas.jpg"),
+				new Carta("Copas", "6", "6Copas.jpg"),
+				new Carta("Copas", "7", "7Copas.jpg"),
+				new Carta("Copas", "Sota", "8Copas.jpg"),
+				new Carta("Copas", "Caballo", "9Copas.jpg"),
+				new Carta("Copas", "Rey", "10Copas.jpg"),
+
+				new Carta("Espadas", "As", "1Espadas.jpg"),
+				new Carta("Espadas", "2", "2Espadas.jpg"),
+				new Carta("Espadas", "3", "3Espadas.jpg"),
+				new Carta("Espadas", "4", "4Espadas.jpg"),
+				new Carta("Espadas", "5", "5Espadas.jpg"),
+				new Carta("Espadas", "6", "6Espadas.jpg"),
+				new Carta("Espadas", "7", "7Espadas.jpg"),
+				new Carta("Espadas", "Sota", "8Espadas.jpg"),
+				new Carta("Espadas", "Caballo", "9Espadas.jpg"),
+				new Carta("Espadas", "Rey", "10Espadas.jpg"),
+
+				new Carta("Bastos", "As", "1Bastos.jpg"),
+				new Carta("Bastos", "2", "2Bastos.jpg"),
+				new Carta("Bastos", "3", "3Bastos.jpg"),
+				new Carta("Bastos", "4", "4Bastos.jpg"),
+				new Carta("Bastos", "5", "5Bastos.jpg"),
+				new Carta("Bastos", "6", "6Bastos.jpg"),
+				new Carta("Bastos", "7", "7Bastos.jpg"),
+				new Carta("Bastos", "Sota", "8Bastos.jpg"),
+				new Carta("Bastos", "Caballo", "9Bastos.jpg"),
+				new Carta("Bastos", "Rey", "10Bastos.jpg")
+			};
+
+			// Mostrar todas las cartas
+			<h2>Todas las cartas</h2>
+			<ul>
+				@foreach (var carta in cartas)
+				{
+					<li>@carta.Palo - @carta.Numero</li>
+					<img src="~/images/cartas/@carta.Imagen"/>
+				}
+			</ul>
+
+			// Mostrar una carta específica
+			var nombreCarta = "Oros - As";
+			var cartaEspecifica = cartas.FirstOrDefault(c => $"{c.Palo} - {c.Numero}" == nombreCarta);
+			if (cartaEspecifica != null)
+			{
+				<h2>Carta Específica</h2>
+				<p>@cartaEspecifica.Palo - @cartaEspecifica.Numero</p>
+				<img src="~/images/cartas/@cartaEspecifica.Imagen"/>
+			}
+			else
+			{
+				<p>Carta no encontrada</p>
+			}
+
+			// Obtener y mostrar una carta aleatoria
+			var cartaAleatoria = cartas[rand.Next(cartas.Count)];
+
+			<h2>Carta Aleatoria</h2>
+			<p>@cartaAleatoria.Palo - @cartaAleatoria.Numero</p>
+			<img src="~/images/cartas/@cartaAleatoria.Imagen"/>
+		}
+
+		@functions {
+			// Clase Carta
+			public class Carta
+			{
+				public string Palo { get; set; }
+				public string Numero { get; set; }
+				public string Imagen { get; set; }
+
+				public Carta(string palo, string numero, string imagen)
+				{
+					Palo = palo;
+					Numero = numero;
+					Imagen = imagen;
+				}
+			}
+		}

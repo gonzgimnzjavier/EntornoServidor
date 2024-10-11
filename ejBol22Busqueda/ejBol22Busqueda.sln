@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35303.130
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejBol22Busqueda", "ejBol22Busqueda.csproj", "{4EEBFC71-327A-41FF-9D61-5010A4C972CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EEBFC71-327A-41FF-9D61-5010A4C972CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EEBFC71-327A-41FF-9D61-5010A4C972CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EEBFC71-327A-41FF-9D61-5010A4C972CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EEBFC71-327A-41FF-9D61-5010A4C972CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30D5EC85-DE16-41AA-A3A5-D4079FD21827}
+	EndGlobalSection
+EndGlobal
